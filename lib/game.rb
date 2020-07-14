@@ -24,9 +24,9 @@ class Game
     
     def board_display
         puts "\n"
-        p @gameboard.map {|key,value| key}
+        puts " | 1 | 2 | 3 | 4 | 5 | 6 | 7 |"
         @gameboard.each do |row,spots|
-            print spots, "\n"
+            print " | " + spots.join(" | ") + " | ", "\n"
         end
     end
 
@@ -52,13 +52,6 @@ class Game
         else
             puts "Column is full", "\n"
             player_move(player)
-        end
-        
-        board_display
-        puts "\n"
-        puts @gameboard.map {|key,value| key}
-        @gameboard.each do |row,spots|
-            print spots, "\n"
         end
         @spots_left -= 1
         @gameboard
